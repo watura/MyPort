@@ -1,0 +1,55 @@
+--- Makefile	2003-08-12 07:40:41.000000000 +0900
++++ work/Makefile	2008-04-23 12:59:51.000000000 +0900
+@@ -16,12 +16,26 @@
+ $(OBJECTS):	%.o:%.cpp %.h   #Each object depends on thier .cpp and .h file
+ 	$(CXX) $(CFLAGS) -c $<
+ 
++
++ifeq ($(ISMACOSX),true)
++
++shared: all
++	$(CXX) $(CFLAGS) -Wl,-install_name,$(PREFIX)/lib/libSGE.dylib -fpic -fPIC -dynamiclib -o libSGE.dylib $(OBJECTS) $(LIBS)
++
++shared-strip:	shared
++	@strip -S libSGE.dylib
++
++else
++
+ shared: all
+ 	$(CXX) $(CFLAGS) -Wl,-soname,libSGE.so.$(API_VER) -fpic -fPIC -shared -o libSGE.so $(OBJECTS) $(LIBS)
+ 
+ shared-strip:	shared
+ 	@strip libSGE.so
+ 
++endif
++
++
+ # Building a dll... I have no idea how to do this, but it should be something like below.
+ dll:	config $(OBJECTS)
+ 	dlltool --output-def SGE.def $(OBJECTS)
+@@ -70,6 +84,20 @@
+ 	@echo ""	
+ endif
+ 
++
++ifeq ($(ISMACOSX),true)
++install:	shared
++	@mkdir -p $(PREFIX_H)
++	install -c -m 644 sge*.h $(PREFIX_H)
++	@mkdir -p $(PREFIX)/lib
++	install -c -m 644 libSGE.a $(PREFIX)/lib
++	install -c libSGE.dylib $(PREFIX)/lib/libSGE.dylib.$(API_VER).$(SGE_VER)
++	@cd $(PREFIX)/lib;\
++	ln -sf libSGE.dylib.$(API_VER).$(SGE_VER) libSGE.dylib.$(API_VER);\
++	ln -sf libSGE.dylib.$(API_VER) libSGE.dylib
++	@echo "** Headerfiles installed in $(PREFIX_H)"
++	@echo "** Library files installed in $(PREFIX)/lib"
++else
+ install:	shared
+ 	@mkdir -p $(PREFIX_H)
+ 	install -c -m 644 sge*.h $(PREFIX_H)
+@@ -81,3 +109,4 @@
+ 	ln -sf libSGE.so.$(API_VER) libSGE.so
+ 	@echo "** Headerfiles installed in $(PREFIX_H)"
+ 	@echo "** Library files installed in $(PREFIX)/lib"
++endif

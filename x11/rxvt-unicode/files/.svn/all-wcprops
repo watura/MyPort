@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repository/macports/!svn/ver/53690/trunk/dports/x11/rxvt-unicode/files
+END
+patch-Makefile.in.diff
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repository/macports/!svn/ver/41801/trunk/dports/x11/rxvt-unicode/files/patch-Makefile.in.diff
+END
+patch-urxvt-8.2-256color.diff
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repository/macports/!svn/ver/53690/trunk/dports/x11/rxvt-unicode/files/patch-urxvt-8.2-256color.diff
+END

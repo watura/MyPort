@@ -1,0 +1,18 @@
+PortSystem      1.0
+
+name            libsdl_sge
+set my_name	    sge
+version         030809
+categories      devel graphics
+platforms       macosx
+description     SGE is a graphics library for SDL.
+
+homepage        http://www.etek.chalmers.se/~e8cal1/sge/
+master_sites    ${homepage}files/
+distname        ${my_name}${version}
+
+checksums       md5 a76975665b6a2bf189130fa2c8821caf
+
+depends_lib     port:libsdl
+use_configure   no
+patchfiles      Makefile.patch Makefile.conf.patch

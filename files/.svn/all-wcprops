@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repository/macports/!svn/ver/45746/trunk/dports/sysutils/screen/files
+END
+patch-Makefile.in
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repository/macports/!svn/ver/45746/trunk/dports/sysutils/screen/files/patch-Makefile.in
+END
+patch-maxargs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repository/macports/!svn/ver/21501/trunk/dports/sysutils/screen/files/patch-maxargs
+END
+patch-windowsize
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repository/macports/!svn/ver/21501/trunk/dports/sysutils/screen/files/patch-windowsize
+END
+patch-window.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repository/macports/!svn/ver/45746/trunk/dports/sysutils/screen/files/patch-window.c
+END
+patch-wrp_vertical_split
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repository/macports/!svn/ver/40398/trunk/dports/sysutils/screen/files/patch-wrp_vertical_split
+END
+patch-pty.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repository/macports/!svn/ver/30468/trunk/dports/sysutils/screen/files/patch-pty.c
+END
+patch-config.h.in
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repository/macports/!svn/ver/45746/trunk/dports/sysutils/screen/files/patch-config.h.in
+END
+patch-screen.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repository/macports/!svn/ver/45746/trunk/dports/sysutils/screen/files/patch-screen.c
+END
+patch-configure
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repository/macports/!svn/ver/45746/trunk/dports/sysutils/screen/files/patch-configure
+END

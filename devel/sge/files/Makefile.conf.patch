@@ -1,0 +1,23 @@
+--- Makefile.conf	2003-08-12 07:43:35.000000000 +0900
++++ work/Makefile.conf	2008-04-23 12:56:20.000000000 +0900
+@@ -3,7 +3,7 @@
+ # Comment/uncomment the following line to disable/enable build options
+ # (See README for more info)
+ C_COMP = y
+-#USE_FT = n
++USE_FT = n
+ #USE_IMG = n
+ #QUIET = y
+ 
+@@ -12,6 +12,11 @@
+ CC=gcc
+ CXX=g++
+ 
++OS := $(shell uname -s)
++ifeq ($(strip $(OS)),Darwin)
++ ISMACOSX := true
++endif
++
+ # Make sure sdl-config is available
+ HAVE_SDL =$(shell if (sdl-config --version) < /dev/null > /dev/null 2>&1; then echo "y"; else echo "n"; fi;)
+ ifeq ($(HAVE_SDL),n)
